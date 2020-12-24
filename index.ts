@@ -1,16 +1,8 @@
-"use strct";
-
 // Electronのモジュール
-const electron = require("electron");
-
-// アプリケーションをコントロールするモジュール
-const { app } = electron;
-
-// ウィンドウを作成するモジュール
-const { BrowserWindow } = electron;
+import { app, BrowserWindow } from 'electron';
 
 // メインウィンドウはGCされないようにグローバル宣言
-let mainWindow = null;
+let mainWindow: BrowserWindow | null = null;
 
 // 全てのウィンドウが閉じたら終了
 app.on("window-all-closed", () => {
