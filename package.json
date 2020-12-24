@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "electron": "^11.1.1"
-  }
+  },
+  "name": "maki-type",
+  "version": "1.0.0",
+  "description": "タイピングアプリ",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pon3939/MakiType.git"
+  },
+  "author": "pon3939",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pon3939/MakiType/issues"
+  },
+  "homepage": "https://github.com/pon3939/MakiType#readme"
 }
