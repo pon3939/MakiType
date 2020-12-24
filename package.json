@@ -6,7 +6,6 @@
   "version": "1.0.0",
   "description": "タイピングアプリ",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/pon3939/MakiType/issues"
   },
-  "homepage": "https://github.com/pon3939/MakiType#readme"
+  "homepage": "https://github.com/pon3939/MakiType#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }
