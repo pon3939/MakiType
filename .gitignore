@@ -180,3 +180,6 @@ $RECYCLE.BIN/
 
 # コンパイル後のJavaScriptファイル
 *.js
+
+# jsファイルとtsファイルを紐づけるファイル
+*.js.map
