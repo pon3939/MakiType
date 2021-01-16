@@ -1,8 +1,7 @@
-function test(): void {
-  console.log('test');
-}
+const exitButton: HTMLElement | null = document.getElementById('exit-button');
 
-// デバッガーがレンダラープロセスに接続するのに時間がかかるため3秒待つ
-setTimeout(() => {
-  test();
-}, 3000);
+if (exitButton) {
+  exitButton.onclick = () => {
+    window.close();
+  };
+}

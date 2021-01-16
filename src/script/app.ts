@@ -16,7 +16,7 @@ app.on('window-all-closed', () => {
 app.on('ready', () => {
   protocol.interceptFileProtocol('file', (req, callback) => {
     // srcをルートディレクトリとして絶対パス指定できるようにする
-    const requestedUrl = req.url.replace('file://', '');
+    const requestedUrl: string = req.url.replace('file://', '');
 
     if (path.isAbsolute(requestedUrl)) {
       callback(
