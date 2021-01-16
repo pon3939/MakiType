@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && electron ./",
+    "start": "yarn run build && electron ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
