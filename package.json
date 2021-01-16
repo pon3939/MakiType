@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "milligram": "^1.4.1"
+  },
   "name": "maki-type",
   "version": "1.0.0",
   "description": "タイピングアプリ",
@@ -38,7 +40,7 @@
     "mac": {
       "category": "public.app-category.education"
     },
-    "nsis":{
+    "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
