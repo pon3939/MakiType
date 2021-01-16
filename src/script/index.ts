@@ -20,7 +20,7 @@ app.on('ready', () => {
     useContentSize: true,
   });
   // 使用するhtmlファイルを指定する
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/../html/index.html`);
 
   // ウィンドウが閉じられたらアプリも終了
   mainWindow.on('closed', () => {
