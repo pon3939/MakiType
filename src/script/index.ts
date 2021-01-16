@@ -1,5 +1,5 @@
 // Electronのモジュール
-import { app, BrowserWindow, protocol } from 'electron';
+import { app, BrowserWindow, protocol } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
 import * as path from 'path';
 
 // メインウィンドウはGCされないようにグローバル宣言
