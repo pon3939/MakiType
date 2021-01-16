@@ -1,5 +1,6 @@
 // Electronのモジュール
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, protocol } from 'electron';
+import * as path from 'path';
 
 // メインウィンドウはGCされないようにグローバル宣言
 let mainWindow: BrowserWindow | null = null;
@@ -13,14 +14,30 @@ app.on('window-all-closed', () => {
 
 // Electronの初期化完了後に実行
 app.on('ready', () => {
+  protocol.interceptFileProtocol('file', (req, callback) => {
+    // srcをルートディレクトリとして絶対パス指定できるようにする
+    const requestedUrl = req.url.replace('file://', '');
+
+    if (path.isAbsolute(requestedUrl)) {
+      callback(
+        path.normalize(
+          path.join(__dirname.replace('\\src\\script', ''), requestedUrl)
+        )
+      );
+    } else {
+      callback(requestedUrl);
+    }
+  });
+
   // ウィンドウサイズを1280*720（フレームサイズを含まない）に設定する
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
     useContentSize: true,
   });
+
   // 使用するhtmlファイルを指定する
-  mainWindow.loadURL(`file://${__dirname}/../html/index.html`);
+  mainWindow.loadURL('file:///src/html/index.html');
 
   // ウィンドウが閉じられたらアプリも終了
   mainWindow.on('closed', () => {
