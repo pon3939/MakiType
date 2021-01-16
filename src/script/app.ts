@@ -37,7 +37,7 @@ app.on('ready', () => {
   });
 
   // 使用するhtmlファイルを指定する
-  mainWindow.loadURL('file:///src/html/index.html');
+  mainWindow.loadURL('file:///src/html/top.html');
 
   // ウィンドウが閉じられたらアプリも終了
   mainWindow.on('closed', () => {
