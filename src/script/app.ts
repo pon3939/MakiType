@@ -15,7 +15,7 @@ app.on('window-all-closed', () => {
 // Electronの初期化完了後に実行
 app.on('ready', () => {
   protocol.interceptFileProtocol('file', (req, callback) => {
-    // srcをルートディレクトリとして絶対パス指定できるようにする
+    // 絶対パス指定できるようにする
     const requestedUrl: string = req.url.replace('file://', '');
 
     if (path.isAbsolute(requestedUrl)) {
@@ -29,18 +29,25 @@ app.on('ready', () => {
     }
   });
 
-  // ウィンドウサイズを1280*720（フレームサイズを含まない）に設定する
-  mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 720,
-    useContentSize: true,
-  });
-
-  // 使用するhtmlファイルを指定する
+  // ウィンドウの初期設定
+  mainWindow = new BrowserWindow({ show: false });
   mainWindow.loadURL('file:///src/html/top.html');
+  mainWindow.maximize();
+  // メニューバー削除
+  if (app.isPackaged) {
+    mainWindow.setMenu(null);
+  } else {
+    // 開発環境では開発者ツールを使いたいから非表示にするだけ
+    mainWindow.setMenuBarVisibility(false);
+  }
 
   // ウィンドウが閉じられたらアプリも終了
   mainWindow.on('closed', () => {
     mainWindow = null;
+  });
+
+  // ちらつき防止のため描画完了してからウィンドウを表示する
+  mainWindow.on('ready-to-show', () => {
+    mainWindow?.show();
   });
 });
