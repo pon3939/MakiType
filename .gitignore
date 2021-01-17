@@ -178,8 +178,11 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,vscode,windows,macos
 
-# コンパイル後のJavaScriptファイル
+# TypeScriptをコンパイル後のファイル
 *.js
-
-# jsファイルとtsファイルを紐づけるファイル
 *.js.map
+# gulpの設定ファイルはgit管理する
+!gulpfile.js
+
+# Scssをコンパイル後のファイル
+*.css

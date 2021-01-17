@@ -7,7 +7,7 @@
   "description": "タイピングアプリ",
   "main": "src/script/app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && gulp sass",
     "start": "yarn run build && electron ./",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "yarn run build && electron-builder --dir",
@@ -32,6 +32,8 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   },
