@@ -5,7 +5,7 @@
   "name": "maki-type",
   "version": "1.0.0",
   "description": "タイピングアプリ",
-  "main": "src/script/app.js",
+  "main": "src/js/app.js",
   "scripts": {
     "build": "tsc && gulp sass",
     "start": "yarn run build && electron ./",

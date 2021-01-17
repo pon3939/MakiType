@@ -21,7 +21,7 @@ app.on('ready', () => {
     if (path.isAbsolute(requestedUrl)) {
       callback(
         path.normalize(
-          path.join(__dirname.replace('\\src\\script', ''), requestedUrl)
+          path.join(__dirname.replace('\\src\\js', ''), requestedUrl)
         )
       );
     } else {
