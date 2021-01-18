@@ -8,7 +8,7 @@ const cssPath = `${srcPath}css`;
 // Sass(Scss)ファイルをコンパイル
 const compileSass = (done) => {
   src(scssPath)
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(dest(cssPath));
   done();
 };
