@@ -1,0 +1,18 @@
+// アプリタイトル
+
+@import '../../foundation/variable.scss';
+
+.p-app-title {
+  height: 20em;
+  margin: 1em auto;
+
+  &__text {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    border-radius: 0.1em;
+    background: $theme-color;
+  }
+}

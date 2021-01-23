@@ -1,0 +1,9 @@
+// 垂直方向に並んだメニュー
+
+.c-vertical-menu {
+  margin: 8em auto;
+
+  &__button {
+    width: 100%;
+  }
+}

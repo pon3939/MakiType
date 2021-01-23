@@ -4,13 +4,34 @@
 		<meta charset="UTF-8">
 		<title>Maki Type</title>
 		<link rel="stylesheet" type="text/css" href="/node_modules/milligram/dist/milligram.min.css">
+		<link rel="stylesheet" type="text/css" href="/src/css/app.css">
 	</head>
 
 	<body>
-		<h1>Maki Type</h1>
-		<a class="button">start</a>
-		<a class="button">config</a>
-		<button id="exit-button" class="button">exit</button>
+		<div class="container">
+			<div class="p-app-title row">
+				<div class="column column-80 column-offset-10">
+					<h1 class="p-app-title__text">Maki Type</h1>
+				</div>
+			</div>
+			<div class="c-vertical-menu">
+				<div class="row">
+					<div class="column column-50 column-offset-25">
+						<a class="button c-vertical-menu__button">start</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column column-50 column-offset-25">
+						<a class="button c-vertical-menu__button">config</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column column-50 column-offset-25">
+						<button id="exit-button" class="c-vertical-menu__button">exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="/src/js/top.js"></script>
 	</body>
 </html>
