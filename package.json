@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc && gulp sass",
     "start": "yarn run build && electron ./",
-    "test": "jest",
+    "test": "yarn run build && jest",
     "pack": "yarn run build && electron-builder --dir",
     "dist": "yarn run build && electron-builder"
   },
