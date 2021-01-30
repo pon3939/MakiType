@@ -30,7 +30,14 @@ app.on('ready', () => {
   });
 
   // ウィンドウの初期設定
-  mainWindow = new BrowserWindow({ show: false });
+  const isTest: boolean = process.env.NODE_ENV === 'test';
+  mainWindow = new BrowserWindow({
+    show: false,
+    webPreferences: {
+      nodeIntegration: isTest,
+      enableRemoteModule: isTest,
+    },
+  });
   mainWindow.loadURL('file:///src/html/top.html');
   mainWindow.maximize();
   // メニューバー削除
