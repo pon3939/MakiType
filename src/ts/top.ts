@@ -1,5 +1,6 @@
-const exitButton: HTMLElement | null = document.getElementById('exit-button');
+// トップ画面
 
+const exitButton: HTMLElement | null = document.getElementById('exit-button');
 if (exitButton) {
   exitButton.onclick = () => {
     window.close();

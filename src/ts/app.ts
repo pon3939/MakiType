@@ -1,6 +1,6 @@
-// Electronのモジュール
+// メインプロセス
 import { app, BrowserWindow, protocol } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
-import * as path from 'path';
+import { isAbsolute, join, normalize } from 'path';
 
 // メインウィンドウはGCされないようにグローバル宣言
 let mainWindow: BrowserWindow | null = null;
@@ -18,11 +18,9 @@ app.on('ready', () => {
     // 絶対パス指定できるようにする
     const requestedUrl: string = req.url.replace('file://', '');
 
-    if (path.isAbsolute(requestedUrl)) {
+    if (isAbsolute(requestedUrl)) {
       callback(
-        path.normalize(
-          path.join(__dirname.replace('\\src\\js', ''), requestedUrl)
-        )
+        normalize(join(__dirname.replace('\\src\\js', ''), requestedUrl))
       );
     } else {
       callback(requestedUrl);
